@@ -10,7 +10,7 @@
 *
 * Return: counter
 */
-int convert_number(int n, int counter)
+int convert_number(int n)
 {
 int num, mod = n % 10, digit, m = 1;
 int c = 1;
