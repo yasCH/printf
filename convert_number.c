@@ -12,28 +12,37 @@
 */
 int convert_number(int n, int counter)
 {
-int d;
-int r;
+int num, mod = n % 10, digit, m = 1;
+int c = 1;
 
+n = n / 10;
+num = n;
 if (n < 0)
 {
-_putchar(45);
-counter = counter + 1;
+_putchar('-');
+num = -num;
+n = -n;
+mod = -mod;
+c++;
 }
-n = abs(n);
+if (num > 0)
+{
+while (num / 10 != 0)
+{
+m = m * 10;
+num = num / 10;
+}
+num = n;
+while (m > 0)
+{
+digit = num / m;
+_putchar(digit + '0');
+num = num - (digit * m);
+m = m / 10;
+c++;
+}
+}
+_putchar(mod + '0');
+return (c);
 
-d = n / 10;
-r = n % 10;
-if (n < 10)
-{
-_putchar(n + 48);
-counter = counter + 1;
-}
-else
-{
-counter = counter + 1;
-counter += convert_number(d, counter);
-_putchar(r + 48);
-}
-return (counter);
 }
