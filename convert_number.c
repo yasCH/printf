@@ -4,8 +4,8 @@
 /**
 * convert_number - convert an integer into char.
 *
-* @n: integer to convert 
-* @counter: number of characters printed 
+* @n: integer to convert
+* @counter: number of characters printed
 *
 * Return: counter
 */
