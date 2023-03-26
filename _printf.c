@@ -26,7 +26,7 @@ printed_chars = switching_function(format, printed_chars, arg);
 }
 else
 {
-putchar(*format);
+_putchar(*format);
 printed_chars++;
 }
 format++;
@@ -61,11 +61,11 @@ printed_chars += convert_number(d, printed_chars);
 break;
 case 'c':
 c = va_arg(arg, int);
-putchar(c);
+_putchar(c);
 printed_chars++;
 break;
 case '%':
-putchar('%');
+_putchar('%');
 printed_chars++;
 break;
 }
