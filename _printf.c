@@ -11,11 +11,18 @@
 */
 int _printf(const char *format, ...)
 {
+int argN;
 int printed_chars;
 va_list arg;
 if (format == NULL)
 {
 return (0);
+}
+argN = arg_counter(format);
+if (argN == 0)
+{
+fputs(format, stdout);
+return (strlen(format));
 }
 printed_chars = 0;
 va_start(arg, format);
