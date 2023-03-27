@@ -33,7 +33,7 @@ else
 {
 counter = counter + 1;
 counter += convert_number(d, counter);
-_putchar(r + 48);
+putchar(r + 48);
 }
 return (counter);
 }
