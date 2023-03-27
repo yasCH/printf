@@ -7,27 +7,30 @@
  * Return: number of printed caracters
  */
 
-int printfbin(unsigned int b, int count)
-{
-	int i = 0;
-	int binaryNum[32];
-	
-	if (b == 0)
-	{
-      		_putchar('0');
-		count++;
-    	}
-   	while (b > 0)
-	{
-      		binaryNum[i++] = b % 2;
-      		b /= 2;
-   	}
-   	for (int j = i-1; j >= 0; j--)
-	{
-      		_putchar('0' + binaryNum[j]);
-		count++;
-	}
-	return (count);
-}
+int printfbin(unsigned int b)
+{	
+int flag = 0;
+int cont = 0;
+int i, a = 1, n;
+unsigned int p;
 
+for (i = 0; i < 32; i++)
+{
+p = ((a << (31 - i)) & b);
+if (p >> (31 - i))
+flag = 1;
+if (flag)
+{
+n = p >> (31 - i);
+putchar(n + 48);
+cont++;
+}
+}
+if (cont == 0)
+{
+cont++;
+putchar('0');
+}
+return (cont);
+}
 
