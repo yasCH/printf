@@ -4,18 +4,19 @@
 /**
  * printfbin - convert int to binary.
  * @b: number to convert.
- * Return: void
+ * Return: number of printed caracters
  */
 
-void printfbin(unsigned int b)
+int printfbin(unsigned int b)
 {
-	int i=0;
+	int i = 0;
+	int count = 0;
 	int binaryNum[32];
 	
 	if (b == 0)
 	{
-      	putchar('0');
-      	return;
+      		putchar('0');
+		count++;
     	}
    	while (b > 0)
 	{
@@ -25,7 +26,9 @@ void printfbin(unsigned int b)
    	for (int j = i-1; j >= 0; j--)
 	{
       		putchar('0' + binaryNum[j]);
+		count++;
 	}
+	return (count);
 }
 
 
