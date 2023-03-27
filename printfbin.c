@@ -7,10 +7,9 @@
  * Return: number of printed caracters
  */
 
-int printfbin(unsigned int b)
+int printfbin(unsigned int b, int count)
 {
 	int i = 0;
-	int count = 0;
 	int binaryNum[32];
 	
 	if (b == 0)
