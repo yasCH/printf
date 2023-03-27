@@ -15,7 +15,7 @@ int printfbin(unsigned int b)
 	
 	if (b == 0)
 	{
-      		putchar('0');
+      		_putchar('0');
 		count++;
     	}
    	while (b > 0)
@@ -25,7 +25,7 @@ int printfbin(unsigned int b)
    	}
    	for (int j = i-1; j >= 0; j--)
 	{
-      		putchar('0' + binaryNum[j]);
+      		_putchar('0' + binaryNum[j]);
 		count++;
 	}
 	return (count);
