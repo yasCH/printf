@@ -17,7 +17,7 @@ int r;
 
 if (n < 0)
 {
-_putchar(45);
+putchar(45);
 counter = counter + 1;
 }
 n = abs(n);
@@ -26,7 +26,7 @@ d = n / 10;
 r = n % 10;
 if (n < 10)
 {
-_putchar(n + 48);
+putchar(n + 48);
 counter = counter + 1;
 }
 else
