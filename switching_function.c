@@ -27,7 +27,7 @@ case 's':
 s = va_arg(arg, char*);
 if (s == NULL)
 {
-s = "(null)";
+return (printed_chars);
 }
 printed_chars += strlen(s);
 fputs(s, stdout);
