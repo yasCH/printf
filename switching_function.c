@@ -16,12 +16,14 @@ int switching_function(const char *format, int printed_chars, va_list arg)
 {
 char c;
 char *s;
-int d;
-unsigned int b;
 switch (*format)
 {
 case 'c':
 c = va_arg(arg, int);
+if ((c >= 0 && c < 32) || c >= 127)
+{
+return (printed_chars);
+}
 _putchar(c);
 printed_chars++;
 break;
@@ -41,12 +43,10 @@ printed_chars++;
 break;
 case 'd':
 case 'i':
-d = va_arg(arg, int);
-printed_chars += convert_number(d, 0);
+printed_chars += convert_number(va_arg(arg, int), 0);
 break;
 case 'b':
-b = va_arg(arg, int);
-printed_chars += convert_number(printfbin(b), 0);
+printed_chars += convert_number(printfbin(va_arg(arg, int)), 0);
 break;
 }
 return (printed_chars);
