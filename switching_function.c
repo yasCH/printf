@@ -18,7 +18,7 @@ char c;
 char *s;
 int d;
 unsigned int b;
-switch (*format++)
+switch (*format)
 {
 case 'c':
 c = va_arg(arg, int);
@@ -46,6 +46,11 @@ break;
 case 'b':
 b = va_arg(arg, int);
 printed_chars+= convert_number(printfbin(b), 0);
+break;
+case 'r':
+_putchar('%');
+_putchar('r');
+printed_chars+=2;
 break;
 }
 return (printed_chars);
