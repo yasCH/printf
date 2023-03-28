@@ -22,7 +22,7 @@ switch (*format)
 {
 case 'c':
 c = va_arg(arg, int);
-putchar(c);
+_putchar(c);
 printed_chars++;
 break;
 case 's':
@@ -35,7 +35,7 @@ printed_chars += strlen(s);
 write(1, s, strlen(s));
 break;
 case '%':
-putchar('%');
+_putchar('%');
 printed_chars++;
 break;
 case 'd':
