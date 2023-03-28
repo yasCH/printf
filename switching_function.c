@@ -39,6 +39,9 @@ _putchar('%');
 printed_chars++;
 break;
 case 'd':
+d = va_arg(arg, int);
+printed_chars += convert_number(d, 0);
+break;
 case 'i':
 d = va_arg(arg, int);
 printed_chars += convert_number(d, 0);
