@@ -29,7 +29,7 @@ case 's':
 s = va_arg(arg, char*);
 if (s == NULL)
 {
-write(1, "(null)", 6); 
+write(1, "(null)", 6);
 return (printed_chars += 6);
 }
 printed_chars += strlen(s);
@@ -46,12 +46,7 @@ printed_chars += convert_number(d, 0);
 break;
 case 'b':
 b = va_arg(arg, int);
-printed_chars+= convert_number(printfbin(b), 0);
-break;
-case 'r':
-_putchar('%');
-_putchar('r');
-printed_chars+=2;
+printed_chars += convert_number(printfbin(b), 0);
 break;
 }
 return (printed_chars);
