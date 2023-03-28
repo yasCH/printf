@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -31,7 +32,7 @@ if (s == NULL)
 return (printed_chars);
 }
 printed_chars += strlen(s);
-fputs(s, stdout);
+write(1, s, strlen(s));
 break;
 case '%':
 putchar('%');
