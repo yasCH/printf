@@ -16,6 +16,7 @@ int switching_function(const char *format, int printed_chars, va_list arg)
 char c;
 char *s;
 int d;
+int b;
 switch (*format)
 {
 case 'c':
@@ -41,8 +42,10 @@ case 'i':
 d = va_arg(arg, int);
 printed_chars += convert_number(d, 0);
 break;
-default:
-putchar('0');
+case 'b':
+b = va_arg(arg, int);
+printed_chars+= convert_number(printfbin(b), 0);
+break;
 }
 return (printed_chars);
 }
