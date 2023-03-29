@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -14,7 +15,10 @@ int convert_number(int n, int counter)
 {
 int d;
 int r;
-
+if (n < INT_MIN || n > INT_MAX)
+{
+return (counter);
+}
 if (n < 0)
 {
 _putchar(45);
